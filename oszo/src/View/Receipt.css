@@ -1,0 +1,15 @@
+.Receipt{
+    display: flex;
+    justify-content: center;
+    margin-top: var(--gap);
+}
+
+.Receipt > * {
+    max-width: 60rem;
+}
+.red {
+    color:red;
+}
+.secondTable{
+        border-bottom: 2px solid var(--font-color);
+}

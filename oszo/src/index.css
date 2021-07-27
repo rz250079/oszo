@@ -15,5 +15,6 @@
     --error-background: #F7E7E7;
     --error-color: #BF3728;
 
-    --gap: 1em;
+    --gap: 1rem;
+    --gap-xl: 3rem;
 }

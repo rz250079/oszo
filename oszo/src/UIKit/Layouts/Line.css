@@ -9,10 +9,10 @@
     justify-content: space-between;
 }
 
-.Line[alignborders] > :first-child {
+.Line[alignborders="true"] > :first-child {
     text-align: left;
 }
 
-.Line[alignborders] > :last-child {
+.Line[alignborders="true"] > :last-child {
     text-align: right;
 }

@@ -35,3 +35,33 @@ a {
 a.active {
     font-weight: bold;
 }
+
+table {
+    border-spacing: 0px;
+    width:100%;
+  }
+
+th, td {
+  padding: var(--gap);
+}
+
+th {
+    color :var(--primary-color);
+    border-bottom: 2px solid var(--font-color);
+}
+
+th,td {
+    text-align: right;
+}
+
+table td:nth-child(2),table th:nth-child(2) {
+    text-align: left;
+}
+table td:nth-child(1),table th:nth-child(1) {
+    text-align: left;
+}
+
+
+
+
+
