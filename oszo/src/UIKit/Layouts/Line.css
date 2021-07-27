@@ -8,3 +8,11 @@
 .Line[justify="between"] {
     justify-content: space-between;
 }
+
+.Line[alignborders] > :first-child {
+    text-align: left;
+}
+
+.Line[alignborders] > :last-child {
+    text-align: right;
+}
