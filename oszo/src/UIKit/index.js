@@ -5,3 +5,5 @@ export { default as Rows } from './Layouts/Rows';
 
 export { default as Logo } from './Elements/Logo';
 export { default as Icon } from './Elements/Icon';
+export { default as Error } from './Elements/Error';
+export { default as Loader } from './Elements/Loader';

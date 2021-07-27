@@ -12,5 +12,8 @@
     --font-color:#1d1d1d;
     --font-color-alter:#fff;
 
+    --error-background: #F7E7E7;
+    --error-color: #BF3728;
+
     --gap: 1em;
 }

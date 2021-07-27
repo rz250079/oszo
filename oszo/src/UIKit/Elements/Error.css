@@ -1,0 +1,7 @@
+.Error {
+    background-color: var(--error-background);
+    color: var(--error-color);
+    display: inline-block;
+    padding: var(--gap);
+    border: 1px solid var(--error-color);
+}

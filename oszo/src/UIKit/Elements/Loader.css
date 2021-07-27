@@ -1,0 +1,9 @@
+.Loader {
+    position: relative;
+}
+
+.Loader img {
+    height: 4rem;
+    position: absolute;
+    top: -1.5rem;
+}
