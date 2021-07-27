@@ -1,0 +1,10 @@
+.Line {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap:var(--gap)
+}
+
+.Line[justify="between"] {
+    justify-content: space-between;
+}

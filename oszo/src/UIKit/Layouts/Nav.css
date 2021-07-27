@@ -1,0 +1,18 @@
+.Nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.Nav a {
+    border-bottom: 4px solid transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 var(--gap);
+}
+
+.Nav a.active {
+    border-bottom: 4px solid #000000;
+}
