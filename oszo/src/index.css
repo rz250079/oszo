@@ -7,6 +7,7 @@
 
     --font-family: 'Ubuntu', sans-serif;
     --background: #f1f1f1;
+    --background-white: #fff;
     --primary-color: #4FBE37;
     --primary-color-dark: #46ac3a;
     --accent-color: #54b948;
@@ -17,6 +18,10 @@
     --error-background: #F7E7E7;
     --error-color: #BF3728;
 
+    --border: #e1e1e1;
+
     --gap: 1rem;
     --gap-xl: 3rem;
+
+    --shadow-front: 0px 0px 8px #e1e1e1;
 }

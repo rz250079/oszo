@@ -1,31 +1,31 @@
 
 import { useRedux } from 'Hooks/useRedux';
-import { getUser, signUser } from 'State/user';
+import { getUser } from 'State/user';
 
 const TOKEN = process.env.REACT_APP_TOKEN_KEY;
 
 
 const useAuth = () => {
-    const user = useRedux(['user'], getUser);
+    const getToken = () => {
+        return localStorage.getItem(TOKEN) || ''
+    }
+    const token = getToken();
+
+    const user = useRedux(['user'], getUser, { token });
 
     const register = (newToken) => {
         localStorage.setItem(TOKEN, newToken);
-        user.dispatch(signUser, newToken);
     }
 
     const clear = () => {
         localStorage.removeItem(TOKEN);
-        user.dispatch(signUser, '');
     }
 
-    const getToken = () => {
-        return localStorage.getItem(TOKEN) || ''
-    }
-
-    const token = getToken();
+   
 
     return {
-        authed: token ? true : false,
+        isLoading: user.isLoading,
+        authed: !user.error && token && user.data ? true : false,
         token,
         register,
         clear,

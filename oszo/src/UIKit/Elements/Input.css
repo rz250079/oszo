@@ -1,0 +1,15 @@
+.Input {
+    border: 1px solid var(--border);
+    padding: 0 var(--gap);
+}
+
+.Input input {
+    padding: var(--gap);
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-size-nav);
+}
+
+.Input input:focus {
+    outline-width: 0;
+}

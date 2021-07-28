@@ -26,6 +26,10 @@ img {
     height: 100%;
 }
 
+img.small {
+    height: 3rem;
+}
+
 a {
     color: inherit;
     height: inherit;

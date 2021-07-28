@@ -14,13 +14,11 @@ const Header = () => {
             <Nav>
                 <NavLink to="/home">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
-                <NavLink to="/receipt">Receipt</NavLink>
-                <NavLink to="/me">Me</NavLink>
+                <NavLink to="/me">My Receipts</NavLink>
             </Nav>
         </Line>
         <Line>
             <UserLogin />
-            <Icon i="bars" />  
         </Line>
     </Line>
     )

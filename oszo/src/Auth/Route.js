@@ -4,13 +4,17 @@ import useAuth from 'Hooks/useAuth';
 
 const AuthRoute = ({component: Component, authed, ...rest}) => {
     const user = useAuth();
-    console.log('user', user);
 
     const render = (props) => {
+      console.log('AuthRoute', user);
+
         if(user.authed) {
             return <Component {...props} />
         }
-        <Redirect to={{pathname: '/login', state: {from: props.location}}} />
+        if(user.isLoading) {
+          return null;
+        }
+        return <Redirect to="/login" />
     }
     return (
       <Route {...rest} render={render} />

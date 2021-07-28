@@ -1,0 +1,6 @@
+.Box {
+    background-color: var(--background-white);
+    padding: var(--gap-xl);
+    box-shadow: var(--shadow-front);
+    min-width: 20em;
+}

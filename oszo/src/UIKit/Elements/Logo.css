@@ -1,3 +1,7 @@
 .Logo {
     width: 5em;
 }
+
+.Logo.small {
+    width: 3em;
+}

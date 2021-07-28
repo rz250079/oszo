@@ -1,33 +1,27 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import useAuth from 'Hooks/useAuth';
 import { Nav } from 'UIKit';
 
 const UserLogin = () => {
     const user = useAuth();
-    console.log('UserLogin', user);
     
-    const handleLogin = () => {
-        user.register('asdasd');
-    }
 
-    const handleLogout = () => {
-        user.clear();
+    if(user.isLoading) {
+        return null;
     }
 
     if(user.authed) {
         return (
             <Nav>
-                <Link to="/logout">Logout</Link>
-                <h3 onClick={handleLogout}>LOGOUT</h3>
+                <NavLink to="/logout">Logout</NavLink>
             </Nav>
         )
     }
     return (
         <Nav>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-            <h3 onClick={handleLogin}>LOGIN</h3>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/register">Register</NavLink>
         </Nav>
     )
 }

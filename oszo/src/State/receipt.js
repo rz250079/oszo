@@ -1,11 +1,9 @@
 
 import { GET, POST } from "./API";
 
-const END_POINT = "receipts/"
 
-
-export const getReceipt = GET('GET_RECEIPT', END_POINT + '', { transactionId: 1 });
-export const postReceipt = POST('POST_RECEIPT', END_POINT + '', { transactionId: 1 });
+export const getReceipt = ({ id }) =>  GET('GET_RECEIPT', 'GetReceipt/', { trxId: id });
+export const bindReceipt = id => POST('BIND_RECEIPT', 'BindCustomerToReceipt/', { customerToken: localStorage.getItem(process.env.REACT_APP_TOKEN_KEY), trxId: id});
 
 
 export const receiptReducer = (receipt = null, action) => {

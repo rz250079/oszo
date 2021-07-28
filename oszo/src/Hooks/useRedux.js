@@ -3,13 +3,20 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Error, Loader } from 'UIKit';
 
-export const useRedux = (item, getter) => {
+export const useRedux = (item, getter, args) => {
     const resp = useSelector(state => state[item]);
+    console.log(resp);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getter);
+        console.log(args);
+
+        if(args) {
+            dispatch(getter(args));
+        } else {
+            dispatch(getter);
+        }
     }, [])
 
     const renderState = (renderer) => {

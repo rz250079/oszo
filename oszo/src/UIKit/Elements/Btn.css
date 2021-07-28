@@ -1,0 +1,20 @@
+.Btn {
+
+}
+
+.Btn button {
+    background-color: var(--primary-color);
+    color: var(--font-color-alter);
+    font-size: var(--font-size-nav);
+    padding: var(--gap) var(--gap-xl);
+    border: none;
+}
+
+.Btn button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.Btn button:active {
+    opacity: 0.9;
+}

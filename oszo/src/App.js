@@ -10,6 +10,8 @@ import About from './View/About';
 import Receipt from './View/Receipt';
 import Login from "View/Login";
 import SignIn from "View/SignIn";
+import Logout from "View/Logout";
+
 import Me from "View/Me";
 import Header from "App/Header";
 
@@ -25,9 +27,10 @@ const App = () => {
                     <Route path="/login" component={Login}></Route>
                     <Route path="/home" component={Home}></Route>
                     <Route path="/about" component={About}></Route>
-                    <Route path="/receipt" component={Receipt}></Route>
                     <Route path="/register" component={SignIn}></Route>
+                    <Route path="/logout" component={Logout}></Route>
                     <AuthRoute path="/me" component={Me}/>
+                    <AuthRoute path="/receipt/:id" component={Receipt}></AuthRoute>
 
                     <Redirect to="/home" />
                 </Switch>
