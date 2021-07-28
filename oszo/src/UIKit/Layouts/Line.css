@@ -9,6 +9,10 @@
     justify-content: space-between;
 }
 
+.Line[justify="center"] {
+    justify-content: center;
+}
+
 .Line[alignborders="true"] > :first-child {
     text-align: left;
 }

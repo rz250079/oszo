@@ -6,8 +6,6 @@ const AuthRoute = ({component: Component, authed, ...rest}) => {
     const user = useAuth();
 
     const render = (props) => {
-      console.log('AuthRoute', user);
-
         if(user.authed) {
             return <Component {...props} />
         }

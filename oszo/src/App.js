@@ -30,7 +30,7 @@ const App = () => {
                     <Route path="/register" component={SignIn}></Route>
                     <Route path="/logout" component={Logout}></Route>
                     <AuthRoute path="/me" component={Me}/>
-                    <AuthRoute path="/receipt/:id" component={Receipt}></AuthRoute>
+                    <Route path="/receipt/:id" component={Receipt}></Route>
 
                     <Redirect to="/home" />
                 </Switch>

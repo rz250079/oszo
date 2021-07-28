@@ -1,24 +1,27 @@
 import {useEffect } from 'react';
 
-import { Icon,Rows, Line, Logo } from 'UIKit';
+import { Icon,Rows, Line, Logo, Center, Box, Btn } from 'UIKit';
 import "./Receipt.css";
 
 import { useDispatch } from 'react-redux';
 import { useRedux } from 'Hooks/useRedux';
 import { getReceipt, bindReceipt } from 'State/receipt';
 
-import { useParams } from 'react-router-dom';
-
+import { useParams, Link } from 'react-router-dom';
+import useAuth from 'Hooks/useAuth';
 
 const Reciept = () => {
+    const user = useAuth();
     const dispatch = useDispatch();
     const params = useParams();
     const receipt = useRedux('receipt', getReceipt, { ...params } );
 
+    console.log(user);
+
     useEffect(() => {
-        console.log(params);
-        
-        dispatch(bindReceipt(params.id));
+        if(user.authed) {
+            dispatch(bindReceipt(params.id));
+        }
     }, []);
 
     const renderList = () => {
@@ -33,11 +36,35 @@ const Reciept = () => {
             )
         })
     }
+
+    const renderSignIn = () => {
+        if(!user.authed) {
+            return (
+                <Center>
+                    <Box>
+                        <Rows>
+                            <h1>Register to save your receipt</h1>
+                            <Line justify="center">
+                                <Link to={`/register?receipt=${params.id}`}>
+                                    <Btn>Register</Btn>
+                                </Link>
+                                <Link to={`/login?receipt=${params.id}`}>
+                                    <Btn>Login</Btn>
+                                </Link>
+                            </Line>
+                        </Rows>
+                    </Box>
+                </Center>
+            )
+        }
+    }
     
     return receipt.render(() => {
         return (
             <div className="View Receipt">
                 <Rows extra>
+                    {renderSignIn()}
+
                     <Line>
                         <Logo />
                     </Line>

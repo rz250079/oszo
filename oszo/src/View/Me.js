@@ -14,7 +14,6 @@ const Me = () => {
 
     const dispatch = useDispatch();
     const user = useAuth();
-    console.log(user);
 
     useEffect(() => {
         dispatch(getUserReceipts).then(resp => {

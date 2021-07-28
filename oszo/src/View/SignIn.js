@@ -1,5 +1,8 @@
 import { LogoSm, Rows, Line, Center, Box, Input, Btn } from 'UIKit';
 
+import { useLocation } from 'react-router-dom';
+
+
 import useAuth from 'Hooks/useAuth';
 import useInput from 'Hooks/useInput';
 
@@ -8,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { signUser } from 'State/user';
 
 const SignIn = (props) => {
+    const location = useLocation();
     const user = useAuth();
     const dispatch = useDispatch();
 
@@ -16,7 +20,6 @@ const SignIn = (props) => {
     const email = useInput('');
 
     const handleLogin = async () => {
-        console.log(username, password, email);
         const resp = await dispatch(signUser({ 
             Username: username.value,
             Password: password.value,
@@ -24,10 +27,13 @@ const SignIn = (props) => {
             Token: ''
         }))
 
-        console.log(resp);
         if(resp.suceess) {
             user.register(resp.payload);
-            props.history.push('/me');
+            if(location.search) {
+                props.history.push('/receipt/' + location.search.split('=')[1]);
+            }else {
+                props.history.push('/me');
+            }
         } else {
             alert(resp.payload.message);
         }

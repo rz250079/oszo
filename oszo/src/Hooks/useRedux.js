@@ -5,13 +5,10 @@ import { Error, Loader } from 'UIKit';
 
 export const useRedux = (item, getter, args) => {
     const resp = useSelector(state => state[item]);
-    console.log(resp);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(args);
-
         if(args) {
             dispatch(getter(args));
         } else {
@@ -35,9 +32,7 @@ export const useRedux = (item, getter, args) => {
         error: resp ? resp.error : false,
         data: resp,
         dispatch: async (func, ...args) => {
-            console.log(func);
-            const resp = await dispatch(func(...args));
-            console.log('done', resp);
+            await dispatch(func(...args));
         },
         render: renderState
     }
