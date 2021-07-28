@@ -10,7 +10,7 @@ import About from './View/About';
 import Receipt from './View/Receipt';
 import Login from "View/Login";
 import SignIn from "View/SignIn";
-import Me from "Views/Me";
+import Me from "View/Me";
 import Header from "App/Header";
 
 const App = () => {
