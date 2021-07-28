@@ -27,7 +27,9 @@ const App = () => {
                     <Route path="/about" component={About}></Route>
                     <Route path="/receipt" component={Receipt}></Route>
                     <Route path="/register" component={SignIn}></Route>
-                    <Redirect to="/login" />
+                    <AuthRoute path="/me" component={Me}/>
+
+                    <Redirect to="/home" />
                 </Switch>
             </div>
         </Grid>
