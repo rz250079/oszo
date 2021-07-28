@@ -18,7 +18,7 @@ const App = () => {
     <div className="App">
         <Grid>
             <div>
-                <Header />   
+              <Header />
             </div>
             <div>
                 <Switch>
