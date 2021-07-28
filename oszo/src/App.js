@@ -8,6 +8,8 @@ import Logo from './Images/logo.svg';
 import Home from './View/Home';
 import About from './View/About';
 import Receipt from './View/Receipt';
+import Login from "View/Login";
+import SignIn from "View/SignIn";
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
                             <img src={Logo} alt="NCR Logo" />
                         </Link>
                         <Nav>
+                            <NavLink to="/login">Login</NavLink>
                             <NavLink to="/home">Home</NavLink>
                             <NavLink to="/about">About</NavLink>
                             <NavLink to="/receipt">Receipt</NavLink>
@@ -32,11 +35,12 @@ const App = () => {
             </div>
             <div>
                 <Switch>
+                    <Route path="/login" component={Login}></Route>
                     <Route path="/home" component={Home}></Route>
                     <Route path="/about" component={About}></Route>
                     <Route path="/receipt" component={Receipt}></Route>
-
-                    <Redirect to="/home" />
+                    <Route path="/signIn" component={SignIn}></Route>
+                    <Redirect to="/login" />
                 </Switch>
             </div>
         </Grid>
