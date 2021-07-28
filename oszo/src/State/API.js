@@ -3,41 +3,53 @@ import axios from 'axios';
 
 const instance = axios.create({
     baseURL: `${process.env.REACT_APP_QR_URL}/`,
-    timeout: 3000,
-    headers: {'Content-Type': 'application/json'}
+    timeout: 5000,
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem(process.env.REACT_APP_TOKEN_KEY)}`
+    }
 });
 
 export const api = instance;
 
-export const GET = (type, url, query) => fetch('get', type, url, query);
-export const POST = (type, url) => fetch('post', type, url);
-export const PUT = (type, url) => fetch('put', type, url);
-export const PATCH = (type, url) => fetch('patch', type, url);
-export const DELETE = (type, url) => fetch('delete', type, url);
+export const GET = (...args) => fetch('get', ...args);
+export const POST = (...args) => fetch('post', ...args);
+export const PUT = (...args) => fetch('put', ...args);
+export const PATCH = (...args) => fetch('patch', ...args);
+export const DELETE = (...args) => fetch('delete', ...args);
 
 const fetch = (req, type, url, query = {}) => {
 
     return async dispatch => {
         try {
             const resp = await instance[req](url, req === 'get' ? { params : query }:  query);
-            console.log(resp);
 
-            dispatch({
+            const data = {
+                suceess: true,
                 type,
                 payload: resp.data
-            })
+            }
+
+            dispatch(data);
+
+            return data;
 
         } catch (error) {
             console.error(error.message, error.response);
 
-            dispatch({
+            const data = {
+                error: true,
                 type, 
                 payload: {
                     error: true,
                     message: error.message,
                     response: error?.response?.data
                 }
-            })
+            }
+
+            dispatch(data);
+
+            return data;
             
         }
     }

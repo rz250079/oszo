@@ -1,10 +1,11 @@
 
-import { GET } from "./API";
+import { GET, POST } from "./API";
 
-const END_POINT = "receipt/"
+const END_POINT = "receipts/"
 
 
-export const getReceipt = GET('GET_RECEIPT', END_POINT + 'GetReceiptByTrxId', { transactionId: 1 });
+export const getReceipt = GET('GET_RECEIPT', END_POINT + '', { transactionId: 1 });
+export const postReceipt = POST('POST_RECEIPT', END_POINT + '', { transactionId: 1 });
 
 
 export const receiptReducer = (receipt = null, action) => {
