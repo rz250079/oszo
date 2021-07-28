@@ -11,8 +11,14 @@
     align-items: center;
     box-sizing: border-box;
     padding: 0 var(--gap);
+    font-size: var(--font-size-nav);
+}
+
+.Nav a:hover {
+    background-color: var(--accent-color);
 }
 
 .Nav a.active {
     border-bottom: 4px solid #000000;
+    background-color: var(--primary-color-dark);
 }

@@ -1,5 +1,6 @@
 :root {
     --font-size: 16px;
+    --font-size-nav: 1.05rem;
     --font-size-m: 1.2rem;
     --font-size-l: 1.5rem;
     --font-size-xl: 2rem;
@@ -7,6 +8,7 @@
     --font-family: 'Ubuntu', sans-serif;
     --background: #f1f1f1;
     --primary-color: #4FBE37;
+    --primary-color-dark: #46ac3a;
     --accent-color: #54b948;
 
     --font-color:#1d1d1d;

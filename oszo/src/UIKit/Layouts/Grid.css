@@ -8,8 +8,9 @@
     background-color: var(--primary-color);
     color: var(--font-color-alter);
     padding: 0 var(--gap);
+    padding: 0 calc(var(--gap) + var(--gap));
 }
 
 .Grid > :nth-child(2) {
-    padding: var(--gap);
+    padding: calc(var(--gap) + var(--gap));
 }
