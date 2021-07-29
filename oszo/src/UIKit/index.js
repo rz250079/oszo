@@ -4,6 +4,7 @@ export { default as Nav } from './Layouts/Nav';
 export { default as Rows } from './Layouts/Rows';
 export { default as Center } from './Layouts/Center';
 export { default as Box } from './Layouts/Box';
+export { default as Inner } from './Layouts/Inner';
 
 export { default as Logo, LogoSm } from './Elements/Logo';
 export { default as Icon } from './Elements/Icon';
