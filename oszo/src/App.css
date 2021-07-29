@@ -12,7 +12,7 @@ body {
     font-size: var(--font-size);
 }
 
-body, input, textarea {
+body, input, textarea, pre {
     font-family: var(--font-family);
     color: var(--font-color);
 }
@@ -23,17 +23,24 @@ h1, h2, h3, h4, h5 {
 }
 
 img {
-    height: 100%;
+    width: 4rem;
 }
 
 img.small {
     height: 3rem;
 }
 
+img.full {
+    width: 100%;
+}
+
 a {
     color: inherit;
     height: inherit;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a.active {
@@ -69,3 +76,6 @@ table td:nth-child(1),table th:nth-child(1) {
 
 
 
+@media screen and (max-width: 600px) {
+
+}
